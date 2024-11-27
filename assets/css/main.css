@@ -2659,6 +2659,7 @@ input, select, textarea {
 		.button.primary {
 			background-color: #8cd1a8;
 			border: 0;
+			padding: 0px 20px; /* Add padding on all sides */
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2848,7 +2849,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		min-height: 0vh;
+		min-height: 100vh;
 		padding: 0 0 12em 0;
 		position: relative;
 		text-align: center;
