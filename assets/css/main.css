@@ -2659,6 +2659,7 @@ input, select, textarea {
 		.button.primary {
 			background-color: #8cd1a8;
 			border: 0;
+			padding: 0px 20px; /* Add padding on all sides */
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2742,14 +2743,6 @@ input, select, textarea {
 			background: rgba(255, 255, 255, 0.95);
 			box-shadow: inset 0 1px 0 0 #dddddd;
 		}
-
-			.main .container:before {
-				min-height: calc( 100vh - 13em);
-				content: '';
-				display: inline-block;
-				vertical-align: middle;
-				width: 1px;
-			}
 
 			.main .container .content {
 				display: inline-block;
@@ -2856,7 +2849,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		min-height: 100vh;
+		min-height: 0;
 		padding: 0 0 12em 0;
 		position: relative;
 		text-align: center;
