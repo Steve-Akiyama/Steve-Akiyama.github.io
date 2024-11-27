@@ -2849,7 +2849,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		min-height: 100vh;
+		min-height: 0;
 		padding: 0 0 12em 0;
 		position: relative;
 		text-align: center;
