@@ -1,92 +1,59 @@
-// assets/js/videodemo.js
+document.addEventListener('DOMContentLoaded', function() {
+    const demoSelector = document.getElementById('demo-selector');
+    const videoViewer = document.getElementById('video-viewer');
+    const gifViewer = document.getElementById('gif-viewer');
+    const description = document.getElementById('description');
+    const projects = document.querySelectorAll('.project'); // Assuming all project items have this class
 
-document.addEventListener("DOMContentLoaded", function () {
-    const demoSelector = document.getElementById("demo-selector");
-    const videoViewer = document.getElementById("video-viewer");
-    const gifViewer = document.getElementById("gif-viewer");
-    const demoDescription = document.getElementById("demo-description");
-
-    demoSelector.addEventListener("change", function () {
-        const selectedOption = demoSelector.options[demoSelector.selectedIndex];
-        const selectedValue = demoSelector.value;
-        const description = selectedOption.getAttribute("data-description");
-
-        // If an MP4 video is selected
-        if (selectedValue.endsWith(".mp4")) {
-            gifViewer.style.display = "none";
-            videoViewer.src = selectedValue;
-            videoViewer.style.display = "block";
-            videoViewer.play();
-        } 
-        // If a GIF is selected
-        else if (selectedValue.endsWith(".gif")) {
-            videoViewer.style.display = "none";
-            gifViewer.src = selectedValue;
-            gifViewer.style.display = "block";
-        } 
-        // If no valid demo is selected
-        else {
-            videoViewer.style.display = "none";
-            gifViewer.style.display = "none";
-        }
-
-        // Update the description
-        demoDescription.textContent = description || "Select a project demo to view.";
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const demoSelector = document.getElementById("demo-selector");
-    const videoViewer = document.getElementById("video-viewer");
-    const gifViewer = document.getElementById("gif-viewer");
-    const demoDescription = document.getElementById("demo-description");
-
-    // Check localStorage for a saved demo
-    const savedDemo = localStorage.getItem("selectedDemo");
-    if (savedDemo) {
-        demoSelector.value = savedDemo;
-        updateDemoDisplay(savedDemo);
-    }
-
-    demoSelector.addEventListener("change", function () {
-        const selectedValue = demoSelector.value;
-        localStorage.setItem("selectedDemo", selectedValue); // Save the selected demo
-        updateDemoDisplay(selectedValue);
+    // Hide all project class items
+    projects.forEach(function(project) {
+        project.style.display = 'none';
     });
 
-    function updateDemoDisplay(selectedValue) {
+    demoSelector.value = "";
+
+    demoSelector.addEventListener('change', function() {
         const selectedOption = demoSelector.options[demoSelector.selectedIndex];
-        const description = selectedOption.getAttribute("data-description");
-    
-        // Pause and reset the previous video before switching
-        if (videoViewer.src && videoViewer.paused === false) {
-            videoViewer.pause(); // Stop the current video
-            videoViewer.currentTime = 0; // Reset the video to the start
+        const videoUrl = selectedOption.value;
+        const projectDescription = selectedOption.getAttribute('data-description');
+        const projectId = selectedOption.getAttribute('project-id');
+
+        // Pause the video if it's currently playing
+        if (!videoViewer.paused) {
+            videoViewer.pause(); // Pause the video
         }
-    
-        if (selectedValue === "") {
-            // Hide both video and gif players if no demo is selected
-            videoViewer.style.display = "none";
-            gifViewer.style.display = "none";
-            return;
+
+        // Hide all project class items
+        projects.forEach(function(project) {
+            project.style.display = 'none';
+        });
+
+        // Hide video and gif by default
+        videoViewer.hidden = true;
+        gifViewer.hidden = true;
+        videoViewer.style.display = 'none'; // Hide the video player
+        description.textContent = '';
+
+        // Show selected project
+        const selectedProject = document.getElementById(projectId);
+        if (selectedProject) {
+            selectedProject.style.display = 'block'; // Show the corresponding project class item
         }
-    
-        // If an MP4 video is selected
-        if (selectedValue.endsWith(".mp4")) {
-            gifViewer.style.display = "none";
-            videoViewer.src = selectedValue;
-            videoViewer.style.display = "block";
-            videoViewer.play();
-        } 
-        // If a GIF is selected
-        else if (selectedValue.endsWith(".gif")) {
-            videoViewer.style.display = "none";
-            gifViewer.src = selectedValue;
-            gifViewer.style.display = "block";
+
+        if (videoUrl) {
+            // If it's a video, show the video element
+            if (videoUrl.endsWith('.mp4')) {
+                videoViewer.src = videoUrl;
+                videoViewer.hidden = false;
+                videoViewer.style.display = 'block'; // Show the video player
+            } else if (videoUrl.endsWith('.gif')) {
+                // If it's a gif, show the gif element
+                gifViewer.src = videoUrl;
+                gifViewer.hidden = false;
+            }
+
+            // Display the description
+            description.textContent = projectDescription;
         }
-    
-        // Update the description
-        demoDescription.textContent = description || "Select a project demo to view.";
-    }
-    
+    });
 });

@@ -66,36 +66,37 @@
 				</header>
 
 				<!-- Dropdown Video Demo Section -->
-				<div class="project">
+				<div class="video-viewer">
 					<h3>Video Demos</h3>
 					<p>Explore some of my projects in action through these quick video demos!</p>
 					<label for="demo-selector">Choose a demo:</label>
 					<select id="demo-selector">
 						<option value="" data-description="Select a project demo to view">-- Select a Demo --</option>
-						<option value="assets/videos/demo1.mp4" data-description="Demo 1: An interactive web app demonstration">Demo 1</option>
-						<option value="assets/videos/demo2.mp4" data-description="Demo 2: A machine learning model in action">Demo 2</option>
-						<option value="assets/videos/demo3.gif" data-description="Demo 3: Visualizing a sorting algorithm">Demo 3</option>
+						<option project-id="tutorai-project" value="assets/videos/tutorai.mp4" data-description="TutorAI (Working Title)">TutorAI (Working Title)</option>
+						<option project-id="rl-farming-sim" value="assets/videos/rl-farming-sim.mp4" data-description="Reinforcement learning plant growth simulator">RL Farming Simulator</option>
+						<option project-id="android-recipe-browser" value="assets/videos/android-recipe-browser.gif" data-description="Android recipe browser with Spoonacular API">Android Recipe Browser</option>
+						<option project-id="image-editor" value="assets/videos/image-editor.gif" data-description="Lightweight batch image editor">Image Viewer & Editor</option>
 					</select>
 					<video id="video-viewer" controls hidden></video>
 					<img id="gif-viewer" hidden>
 					<p class="description" id="description"></p>
 				</div>
-		
+				<br>
 				<!-- TutorAI Project -->
-				<div class="project">
+				<div class="project" id="tutorai-project">
 					<h3><a href="https://eecs.engineering.oregonstate.edu/capstone/submission/pages/viewSingleProject.php?id=Qb8Mgf4wM8AXlkcX" target="_blank">TutorAI</a></h3>
 					<p>
-						Developed a personalized learning platform using LangChain and retrieval-augmented generation (RAG) to help students learn more effectively.
-						<br>I'll update with a GitHub link if and when I have approval to do so.
+						Developed a personalized learning platform using LangChain and retrieval-augmented generation (RAG) to help students learn more effectively. Currently under development.
+						<br>I'm unable to share the GitHub link, but feel free to ask me questions about the project, and I'll share what I can!
 						<br><br>
 						<strong>Technologies Used:</strong> LangChain, React, Uvicorn, Python
 						<br><br>
 						<a href="https://eecs.engineering.oregonstate.edu/capstone/submission/pages/viewSingleProject.php?id=Qb8Mgf4wM8AXlkcX" class="button primary" target="_blank" rel="noopener noreferrer">View Project</a>
 					</p>
 				</div>
-		
+
 				<!-- Reinforcement Learning for Plant Growth Sim -->
-				<div class="project">
+				<div class="project" id="rl-farming-sim">
 					<h3><a href="https://github.com/Steve-Akiyama/RL-Farming-Simulator" target="_blank">Reinforcement Learning for Plant Growth Sim</a></h3>
 					<p>
 						Led a team of 4 in the development of a reinforcement learning program to optimize plant growth using various methods. Focused on the Actor-Critic algorithm and Markov Decision Processes.
@@ -105,9 +106,9 @@
 						<a href="https://github.com/Steve-Akiyama/RL-Farming-Simulator" class="button primary" target="_blank" rel="noopener noreferrer">View Project</a>
 					</p>
 				</div>
-		
+
 				<!-- Android Recipe Browser -->
-				<div class="project">
+				<div class="project" id="android-recipe-browser">
 					<h3><a href="https://github.com/osu-cs492-599-w24/RecipeApp" target="_blank">Android Recipe Browser</a></h3>
 					<p>
 						Led a team of 4 in the end-to-end development of an Android app for discovering, viewing, and saving recipes. Managed development, milestone planning, and testing to ensure a seamless user experience.
@@ -117,9 +118,9 @@
 						<a href="https://github.com/osu-cs492-599-w24/RecipeApp" class="button primary" target="_blank" rel="noopener noreferrer">View Project</a>
 					</p>
 				</div>
-		
+
 				<!-- Image Editor (SCRUM Team Project) -->
-				<div class="project">
+				<div class="project" id="image-editor">
 					<h3><a href="https://github.com/MrF1ow/Image_Viewer_Editor" target="_blank">Image Editor</a></h3>
 					<p>
 						Collaborated with a team of 7 to develop an image editing application from the ground up using SCRUM methodology. Contributed to core features such as image manipulation tools and filters.
@@ -129,6 +130,7 @@
 						<a href="https://github.com/MrF1ow/Image_Viewer_Editor" class="button primary" target="_blank" rel="noopener noreferrer">View Project</a>
 					</p>
 				</div>
+
 		
 				<a href="#contact" class="goto-next scrolly">Next</a>
 			</div>

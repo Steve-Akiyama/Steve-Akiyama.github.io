@@ -3144,4 +3144,12 @@ input, select, textarea {
 		margin: 0 auto;           /* Centers the video horizontally */
 		display: block;           /* Ensures it's a block element for proper sizing */
 	}
+
+	#project {
+		display: none;
+	}
+	
+	#video-viewer {
+		display: none;
+	}
 	
