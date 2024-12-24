@@ -3135,3 +3135,13 @@ input, select, textarea {
 				}
 
 	}
+
+	#video-viewer {
+		width: 100%;              /* Makes the video width responsive */
+		max-width: 800px;         /* Set the maximum width to match your content */
+		height: auto;             /* Keeps the aspect ratio intact */
+		object-fit: cover;        /* Crops the video to the container if needed */
+		margin: 0 auto;           /* Centers the video horizontally */
+		display: block;           /* Ensures it's a block element for proper sizing */
+	}
+	
