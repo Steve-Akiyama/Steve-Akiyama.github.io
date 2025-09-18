@@ -73,6 +73,29 @@ input, select, textarea {
 }
 
 /* Basic */
+	.profile-pic {
+	text-align: center;
+	margin-bottom: 15px;
+	}
+
+	.profile-pic img {
+	width: 160px; /* adjust size */
+	height: 160px;
+	border-radius: 50%; /* makes it circular */
+	object-fit: cover;
+	border: 3px solid #fff; /* optional, matches your site’s clean look */
+	}
+
+	.header-links {
+	margin-top: 15px;
+	text-align: center;
+	}
+
+	.header-links ul.icons li {
+	display: inline-block;
+	margin: 0 10px;
+	}
+
 
 	html {
 		box-sizing: border-box;
@@ -3135,3 +3158,4 @@ input, select, textarea {
 				}
 
 	}
+
